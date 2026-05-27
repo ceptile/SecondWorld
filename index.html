@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <title>SecondWorld</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+    #loading-screen {
+      position: fixed; inset: 0;
+      background: #000;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      z-index: 9999; color: #fff;
+      font-family: 'Courier New', monospace;
+    }
+    #loading-screen h1 { font-size: 3rem; letter-spacing: 0.2em; margin-bottom: 1rem; color: #7ec850; }
+    #loading-bar-bg { width: 300px; height: 8px; background: #333; border-radius: 4px; overflow: hidden; }
+    #loading-bar { height: 100%; width: 0%; background: #7ec850; transition: width 0.3s ease; }
+    #loading-text { margin-top: 0.75rem; font-size: 0.85rem; color: #aaa; }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <h1>SECONDWORLD</h1>
+    <div id="loading-bar-bg"><div id="loading-bar"></div></div>
+    <div id="loading-text">Initializing...</div>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
